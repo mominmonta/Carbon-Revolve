@@ -9,24 +9,24 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
                     },
                     colors: {
                         brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            900: '#14532d',
-                            dark: '#0b0f17',
-                            card: '#161e2e'
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            dark: '#022c22'
                         }
                     }
                 }
@@ -35,143 +35,122 @@
     </script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #090d16;
-            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #e6f4ed 0%, #edf7f2 35%, #f1f5f9 100%);
+            background-attachment: fixed;
+            color: #0f172a;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+        .glass-header {
+            background: rgba(2, 44, 34, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.4);
+        }
+        .gorgeous-glow {
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
         }
         .custom-scrollbar::-webkit-scrollbar {
-            width: 5px;
-            height: 5px;
+            width: 6px;
+            height: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: #0f172a;
+            background: rgba(226, 232, 240, 0.6);
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #334155;
+            background: #10b981;
             border-radius: 9999px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #475569;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-white">
+<body class="min-h-screen flex flex-col antialiased selection:bg-emerald-500 selection:text-white">
 
-    <!-- Top Navigation Header -->
-    <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 sticky top-0 z-30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-4">
+    <!-- Top Navigation Header with Gorgeous Styling & Matching Brand Logo -->
+    <header class="glass-header sticky top-0 z-30 shadow-2xl">
+        <div class="max-w-[96%] xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
             
-            <!-- Brand Logo -->
-            <div class="flex items-center gap-2 sm:gap-3 min-w-0">
-                <!-- SVG Brand Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 bg-white/95 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl border border-emerald-500/30 shadow-md">
-                    <svg class="h-6 sm:h-7 w-auto" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <text x="0" y="38" font-family="'Inter', sans-serif" font-weight="900" font-size="34" fill="#050505" letter-spacing="-0.5">CARB</text>
+            <!-- Gorgeous Brand Logo & Dynamic Header Title -->
+            <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 flex items-center gap-3 bg-gradient-to-r from-emerald-950/80 via-slate-900/90 to-teal-950/80 px-4 py-2.5 rounded-2xl border border-emerald-500/40 gorgeous-glow transition duration-300 hover:scale-[1.02]">
+                    <svg class="h-9 sm:h-10 w-auto" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="38" font-family="'Inter', sans-serif" font-weight="900" font-size="34" fill="#34d399" letter-spacing="-0.5">CARB</text>
                         <g transform="translate(92, 10)">
-                            <path d="M22 6C16.5 6 12 10.5 12 16C12 16.5 12.1 17 12.2 17.5C10.2 16.5 7.8 16.5 5.8 17.8C3.2 19.5 1.5 22.5 1.8 25.7C2.2 29.5 5.2 32.5 9 32.5H33C36.9 32.5 40 29.4 40 25.5C40 21.8 37.2 18.7 33.5 18.5C32.8 11.5 26.8 6 19.5 6H22Z" fill="#00A651"/>
-                            <text x="14" y="26" font-family="'Inter', sans-serif" font-weight="800" font-size="8" fill="#050505" letter-spacing="-0.2">CO₂</text>
+                            <path d="M22 6C16.5 6 12 10.5 12 16C12 16.5 12.1 17 12.2 17.5C10.2 16.5 7.8 16.5 5.8 17.8C3.2 19.5 1.5 22.5 1.8 25.7C2.2 29.5 5.2 32.5 9 32.5H33C36.9 32.5 40 29.4 40 25.5C40 21.8 37.2 18.7 33.5 18.5C32.8 11.5 26.8 6 19.5 6H22Z" fill="#10b981"/>
+                            <text x="14" y="26" font-family="'Inter', sans-serif" font-weight="800" font-size="8" fill="#022c22" letter-spacing="-0.2">CO₂</text>
                         </g>
-                        <text x="135" y="38" font-family="'Inter', sans-serif" font-weight="900" font-size="34" fill="#050505" letter-spacing="-0.5">N</text>
-                        <text x="0" y="52" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#050505" letter-spacing="0.3">CLEAN EMISSION FOR GREEN FUTURE</text>
-                        <text x="0" y="75" font-family="'Inter', sans-serif" font-weight="900" font-size="25" fill="#00A651" letter-spacing="1">REVOLVE</text>
+                        <text x="135" y="38" font-family="'Inter', sans-serif" font-weight="900" font-size="34" fill="#34d399" letter-spacing="-0.5">N</text>
+                        <text x="0" y="54" font-family="'Inter', sans-serif" font-weight="800" font-size="9" fill="#a7f3d0" letter-spacing="0.4">CLEAN EMISSION FOR GREEN FUTURE</text>
+                        <text x="0" y="76" font-family="'Inter', sans-serif" font-weight="900" font-size="24" fill="#10b981" letter-spacing="1.5">REVOLVE</text>
                     </svg>
                 </div>
                 
-                <div class="hidden md:block truncate">
-                    <h1 class="font-bold text-sm text-white leading-tight truncate">Carbon Revolve</h1>
-                    <p class="text-[11px] text-emerald-400 font-medium truncate">Employee Database Management System</p>
+                <div class="hidden md:block border-l border-emerald-500/30 pl-4 py-1">
+                    <h1 class="font-black text-lg sm:text-xl bg-gradient-to-r from-emerald-300 via-teal-200 to-white bg-clip-text text-transparent leading-tight tracking-tight uppercase">
+                        Carbon Revolve
+                    </h1>
+                    <p class="text-xs text-emerald-400 font-semibold flex items-center gap-1.5 mt-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        Employee Management System
+                    </p>
                 </div>
             </div>
 
-            <!-- Role Badge & Action -->
-            <div class="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-                <div id="roleBadge" class="hidden xs:flex px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold items-center gap-1.5 sm:gap-2 border bg-slate-800 border-slate-700 text-slate-300">
-                    <span class="w-2 h-2 rounded-full bg-slate-400 flex-shrink-0"></span>
+            <!-- Header Stats & Authentication Button -->
+            <div class="flex items-center gap-3 sm:gap-4 flex-shrink-0">
+                <div class="hidden lg:flex items-center gap-3 bg-slate-900/80 px-4 py-2 rounded-xl border border-emerald-500/30 text-xs font-semibold text-slate-300 shadow-inner">
+                    <div>Staff Total: <span id="statTotalCount" class="text-emerald-400 font-extrabold text-sm ml-1">0</span></div>
+                    <span class="text-emerald-500/40">|</span>
+                    <div>Departments: <span id="statDeptCount" class="text-emerald-400 font-extrabold text-sm ml-1">0</span></div>
+                </div>
+
+                <div id="roleBadge" class="px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 border bg-emerald-950/60 border-emerald-500/40 text-emerald-300 shadow-sm">
+                    <span id="roleDot" class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
                     <span id="roleText" class="truncate max-w-[120px] sm:max-w-none">Guest Account</span>
                 </div>
 
-                <button id="authBtn" onclick="openAuthModal()" class="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-medium transition shadow-sm flex items-center gap-1.5 sm:gap-2">
-                    <i class="fa-solid fa-lock text-[10px] sm:text-xs"></i>
-                    <span class="whitespace-nowrap">Super User Login</span>
+                <button id="authBtn" onclick="openAuthModal()" class="px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm rounded-xl bg-gradient-to-r from-emerald-500 via-teal-600 to-emerald-700 hover:from-emerald-400 hover:to-teal-500 active:scale-95 text-white font-extrabold transition duration-200 shadow-lg shadow-emerald-900/50 flex items-center gap-2 border border-emerald-400/30">
+                    <i id="authIcon" class="fa-solid fa-lock text-xs"></i>
+                    <span id="authBtnText" class="whitespace-nowrap">Super User Login</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero / Company Banner -->
-    <section class="relative bg-gradient-to-r from-slate-950 via-emerald-955 to-slate-950 border-b border-slate-800 overflow-hidden py-6 sm:py-10 px-4 sm:px-6 lg:px-8">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,166,81,0.15),transparent_60%)]"></div>
-        <div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="space-y-3 text-center md:text-left w-full md:w-auto flex flex-col items-center md:items-start">
-                
-                <!-- Banner Logo Badge -->
-                <div class="inline-flex items-center gap-3 bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl shadow-xl border border-emerald-400/40 max-w-full">
-                    <svg class="h-8 sm:h-10 md:h-12 w-auto max-w-full" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <text x="0" y="38" font-family="'Inter', sans-serif" font-weight="900" font-size="34" fill="#050505" letter-spacing="-0.5">CARB</text>
-                        <g transform="translate(92, 10)">
-                            <path d="M22 6C16.5 6 12 10.5 12 16C12 16.5 12.1 17 12.2 17.5C10.2 16.5 7.8 16.5 5.8 17.8C3.2 19.5 1.5 22.5 1.8 25.7C2.2 29.5 5.2 32.5 9 32.5H33C36.9 32.5 40 29.4 40 25.5C40 21.8 37.2 18.7 33.5 18.5C32.8 11.5 26.8 6 19.5 6H22Z" fill="#00A651"/>
-                            <text x="14" y="26" font-family="'Inter', sans-serif" font-weight="800" font-size="8" fill="#050505">CO₂</text>
-                        </g>
-                        <text x="135" y="38" font-family="'Inter', sans-serif" font-weight="900" font-size="34" fill="#050505" letter-spacing="-0.5">N</text>
-                        <text x="0" y="52" font-family="'Inter', sans-serif" font-weight="700" font-size="9" fill="#050505" letter-spacing="0.3">CLEAN EMISSION FOR GREEN FUTURE</text>
-                        <text x="0" y="75" font-family="'Inter', sans-serif" font-weight="900" font-size="25" fill="#00A651" letter-spacing="1">REVOLVE</text>
-                    </svg>
-                </div>
-                
-                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-snug">
-                    Internal Employee Directory & Records Portal
-                </h2>
-                <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
-                    <span class="text-emerald-400 font-semibold">CLEAN EMISSION FOR GREEN FUTURE</span> &bull; Centralized staff directory management for personnel records, blood groups, and emergency credentials.
-                </p>
-            </div>
-
-            <!-- Stats Bar -->
-            <div class="w-full md:w-auto grid grid-cols-2 gap-3 sm:gap-4 bg-slate-900/80 p-4 sm:p-5 rounded-2xl border border-slate-800 backdrop-blur-md shadow-2xl">
-                <div class="text-center px-2 sm:px-4 border-r border-slate-800">
-                    <span id="statTotalCount" class="block text-2xl sm:text-3xl font-extrabold text-white">0</span>
-                    <span class="text-[10px] sm:text-[11px] text-slate-400 uppercase font-semibold tracking-wider">Total Staff</span>
-                </div>
-                <div class="text-center px-2 sm:px-4">
-                    <span id="statDeptCount" class="block text-2xl sm:text-3xl font-extrabold text-emerald-400">0</span>
-                    <span class="text-[10px] sm:text-[11px] text-slate-400 uppercase font-semibold tracking-wider">Departments</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Main Content Area -->
-    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6">
+    <main class="flex-1 max-w-[96%] xl:max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
         <!-- Banner Alert for Guest Mode -->
-        <div id="guestNotice" class="bg-slate-900/90 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
-            <div class="flex items-start sm:items-center gap-3">
-                <div class="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-xl flex-shrink-0 mt-0.5 sm:mt-0">
-                    <i class="fa-solid fa-circle-info text-base sm:text-lg"></i>
+        <div id="guestNotice" class="glass-panel rounded-2xl px-5 py-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 border border-emerald-300">
+                    <i class="fa-solid fa-shield-halved text-sm"></i>
                 </div>
-                <div>
-                    <h3 class="text-xs sm:text-sm font-semibold text-white">Viewing in Guest Mode</h3>
-                    <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5">You can search and view profiles. Editing, adding, and deleting records require Super User authentication.</p>
-                </div>
+                <p class="text-xs sm:text-sm text-slate-700">You are currently in <span class="font-bold text-emerald-800">Guest Read-Only Mode</span>. Password needed to Edit, Add or Delete employee records.</p>
             </div>
-            <button onclick="openAuthModal()" class="w-full sm:w-auto text-center py-2 sm:py-0 text-xs text-emerald-400 hover:text-emerald-300 font-semibold underline whitespace-nowrap">
-                Switch to Super User &rarr;
+            <button onclick="openAuthModal()" class="text-xs text-emerald-700 hover:text-emerald-900 font-extrabold underline flex items-center gap-1">
+                <span>Login as Super User</span>
+                <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
             </button>
         </div>
 
-        <!-- Controls Header: Search, Filters & Action Buttons -->
-        <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 space-y-3 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:gap-4">
+        <!-- Controls & Filters Header -->
+        <div class="glass-panel p-4 rounded-2xl shadow-md space-y-3 lg:space-y-0 lg:flex lg:items-center lg:justify-between lg:gap-4">
             
-            <!-- Filters Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 flex-1">
-                <!-- Search Box -->
+                <!-- Compact Search Box -->
                 <div class="relative sm:col-span-2 lg:col-span-1">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                    <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Search name, ID, mobile, role..." class="w-full pl-9 pr-3 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-emerald-600 text-xs"></i>
+                    <input type="text" id="searchInput" oninput="applyFilters()" placeholder="Search name, ID, phone, dept..." class="w-full pl-9 pr-3 py-2.5 bg-white border border-slate-300 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-500 transition shadow-xs">
                 </div>
 
                 <!-- Gender/Sex Filter -->
-                <select id="sexFilter" onchange="applyFilters()" class="w-full bg-slate-950 border border-slate-800 text-slate-300 text-xs sm:text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-emerald-500 transition">
+                <select id="sexFilter" onchange="applyFilters()" class="w-full bg-white border border-slate-300 text-slate-700 text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:border-emerald-500 transition">
                     <option value="">All Genders</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -179,7 +158,7 @@
                 </select>
 
                 <!-- Blood Group Filter -->
-                <select id="bloodFilter" onchange="applyFilters()" class="w-full bg-slate-950 border border-slate-800 text-slate-300 text-xs sm:text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-emerald-500 transition">
+                <select id="bloodFilter" onchange="applyFilters()" class="w-full bg-white border border-slate-300 text-slate-700 text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:border-emerald-500 transition">
                     <option value="">All Blood Groups</option>
                     <option value="None">None</option>
 		    <option value="A+">A+</option>
@@ -193,119 +172,172 @@
                 </select>
 
                 <!-- Department Filter -->
-                <select id="deptFilter" onchange="applyFilters()" class="w-full bg-slate-950 border border-slate-800 text-slate-300 text-xs sm:text-sm rounded-xl px-3 py-2.5 focus:outline-none focus:border-emerald-500 transition">
+                <select id="deptFilter" onchange="applyFilters()" class="w-full bg-white border border-slate-300 text-slate-700 text-xs rounded-xl px-3 py-2.5 focus:outline-none focus:border-emerald-500 transition font-semibold">
                     <option value="">All Departments</option>
                 </select>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="flex items-center justify-end gap-2 pt-2 lg:pt-0 border-t border-slate-800/80 lg:border-t-0">
-                <button id="addEmpBtn" onclick="openEmpModal()" class="hidden w-full sm:w-auto px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white rounded-xl text-xs sm:text-sm font-semibold transition items-center justify-center gap-2 shadow-lg shadow-emerald-600/20">
+            <!-- Action Button (Visible only to Super User) -->
+            <div class="flex items-center justify-end gap-2">
+                <button id="addEmpBtn" onclick="openEmpModal()" class="hidden w-full sm:w-auto px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 active:scale-95 text-white rounded-xl text-xs font-extrabold transition duration-200 items-center justify-center gap-2 shadow-md border border-emerald-500/30">
                     <i class="fa-solid fa-user-plus text-xs"></i>
-                    <span>Add Employee</span>
+                    <span>Add New Employee</span>
                 </button>
+            </div>
+        </div>
+
+        <!-- Department Quick Overview Badges -->
+        <div class="flex items-center gap-2 overflow-x-auto py-1 custom-scrollbar">
+            <span class="text-[11px] font-extrabold text-emerald-800 uppercase tracking-wider whitespace-nowrap flex items-center gap-1.5">
+                <i class="fa-solid fa-layer-group text-emerald-600"></i> Quick Filter:
+            </span>
+            <div id="departmentBadges" class="flex items-center gap-2 flex-nowrap">
+                <!-- Dynamic Filter Buttons -->
             </div>
         </div>
 
         <!-- Employee Directory Grid -->
-        <div id="employeeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+        <div id="employeeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <!-- Dynamic Cards Inserted Here -->
         </div>
 
         <!-- Empty State -->
-        <div id="emptyState" class="hidden text-center py-12 sm:py-16 px-4 bg-slate-900/50 border border-dashed border-slate-800 rounded-2xl">
-            <i class="fa-solid fa-users-slash text-3xl sm:text-4xl text-slate-600 mb-3"></i>
-            <h3 class="text-base sm:text-lg font-semibold text-slate-300">No Employees Found</h3>
-            <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto mt-1">Try adjusting your search query or filters. Login as Super User to create new records.</p>
+        <div id="emptyState" class="hidden text-center py-20 px-4 glass-panel rounded-3xl border border-dashed border-emerald-400/40">
+            <i class="fa-solid fa-users-slash text-5xl text-emerald-500/50 mb-4"></i>
+            <h3 class="text-lg font-bold text-slate-700">No Employee Records Found</h3>
+            <p class="text-xs text-slate-500 max-w-md mx-auto mt-1">Try adjusting your search query, clearing filters, or switching departments.</p>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-800/80 bg-slate-900/60 py-6 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
-            <p>&copy; 2026 Carbon Revolve Inc. Confidential & Internal Use Only.</p>
-            <p class="text-[11px] text-slate-600">Clean Emission For Green Future &bull; Database System v2.0</p>
-        </div>
-    </footer>
-
-    <!-- MODAL: Super User Authentication -->
-    <div id="authModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-5 sm:p-6 shadow-2xl relative">
-            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            
-            <div class="text-center mb-6">
-                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                    <i class="fa-solid fa-shield-halved text-xl"></i>
-                </div>
-                <h3 class="text-lg sm:text-xl font-bold text-white">Super User Access</h3>
-                <p class="text-xs text-slate-400 mt-1">Enter password to gain full edit & management privileges</p>
-            </div>
-
-            <form onsubmit="handleLogin(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-medium text-slate-400 mb-1">Access Password</label>
-                    <div class="relative">
-                        <input type="password" id="loginPassword" required placeholder="Enter Super User Password" class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500 transition pr-10">
-                        <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 p-1">
-                            <i id="passEyeIcon" class="fa-solid fa-eye text-xs"></i>
-                        </button>
+    <!-- Super User Login Modal -->
+    <div id="authModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4">
+        <div class="glass-panel w-full max-w-md rounded-3xl p-6 sm:p-8 shadow-2xl border border-emerald-500/40 space-y-5">
+            <div class="flex justify-between items-center border-b border-slate-700/60 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                        <i class="fa-solid fa-user-shield text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-extrabold text-base text-slate-100">Super User Authentication</h3>
+                        <p class="text-xs text-slate-400">Enter security password for elevated access</p>
                     </div>
                 </div>
+                <button onclick="closeAuthModal()" class="text-slate-400 hover:text-white p-1 transition"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
 
-                <div id="loginError" class="hidden text-red-400 text-xs bg-red-500/10 border border-red-500/20 p-2.5 rounded-xl flex items-center gap-2">
-                    <i class="fa-solid fa-circle-exclamation flex-shrink-0"></i>
-                    <span>Invalid Super User password. Please try again.</span>
+            <form onsubmit="handleAuthSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1.5 uppercase tracking-wide">Super User Password</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-key absolute left-3.5 top-1/2 -translate-y-1/2 text-emerald-400 text-xs"></i>
+                        <input type="password" id="authPasswordInput" required placeholder="Enter Super User password..." class="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-sm text-slate-100 focus:outline-none focus:border-emerald-400 transition">
+                    </div>
+                    <p id="authErrorMsg" class="text-xs text-rose-400 font-semibold mt-2 hidden flex items-center gap-1">
+                        <i class="fa-solid fa-circle-exclamation"></i> Invalid password. Password is case-sensitive!
+                    </p>
                 </div>
 
-                <button type="submit" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white rounded-xl font-semibold text-xs sm:text-sm transition shadow-lg shadow-emerald-600/20">
-                    Authenticate Account
-                </button>
+                <div class="flex items-center justify-end gap-3 pt-2">
+                    <button type="button" onclick="closeAuthModal()" class="px-4 py-2.5 text-xs font-bold text-slate-300 hover:bg-slate-800 rounded-xl transition">Cancel</button>
+                    <button type="submit" class="px-6 py-2.5 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-extrabold text-xs rounded-xl transition shadow-lg shadow-emerald-900/50">Login as Super User</button>
+                </div>
             </form>
         </div>
     </div>
 
-    <!-- MODAL: Add / Edit Employee -->
-    <div id="empModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-3 sm:p-4 custom-scrollbar overflow-y-auto">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full p-4 sm:p-6 shadow-2xl relative my-auto max-h-[90vh] flex flex-col">
-            
-            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-                <h3 id="empModalTitle" class="text-base sm:text-lg font-bold text-white">Add New Employee Record</h3>
-                <button onclick="closeEmpModal()" class="text-slate-400 hover:text-white p-1">
-                    <i class="fa-solid fa-xmark text-lg"></i>
+    <!-- View Full Profile Modal -->
+    <div id="profileModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4 custom-scrollbar overflow-y-auto">
+        <div class="glass-panel w-full max-w-2xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-emerald-500/40 my-8 space-y-6">
+            <div class="flex justify-between items-start border-b border-slate-700/60 pb-4">
+                <div class="flex items-center gap-4">
+                    <img id="viewEmpAvatar" src="" class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl object-cover border-2 border-emerald-400 bg-slate-800 shadow-md">
+                    <div>
+                        <h2 id="viewEmpName" class="font-black text-xl sm:text-2xl text-white tracking-tight"></h2>
+                        <p id="viewEmpDesignation" class="text-xs sm:text-sm text-emerald-400 font-bold mt-0.5"></p>
+                        <span id="viewEmpId" class="inline-block mt-1 text-[11px] font-mono px-2.5 py-0.5 rounded bg-slate-800 text-emerald-300 border border-slate-700 font-bold"></span>
+                    </div>
+                </div>
+                <button onclick="closeProfileModal()" class="text-slate-400 hover:text-white p-2 rounded-xl bg-slate-800/60 transition"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <!-- Profile Details Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800">
+                    <span class="text-slate-400 text-[11px] block font-medium">Department</span>
+                    <span id="viewEmpDept" class="text-sm font-bold text-slate-100 mt-1 block"></span>
+                </div>
+                <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800">
+                    <span class="text-slate-400 text-[11px] block font-medium">Gender / Sex</span>
+                    <span id="viewEmpSex" class="text-sm font-bold text-slate-100 mt-1 block"></span>
+                </div>
+                <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800">
+                    <span class="text-slate-400 text-[11px] block font-medium">Blood Group</span>
+                    <span id="viewEmpBlood" class="text-sm font-extrabold text-red-400 mt-1 block"></span>
+                </div>
+                <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800">
+                    <span class="text-slate-400 text-[11px] block font-medium">Mobile Number</span>
+                    <span id="viewEmpMobile" class="text-sm font-semibold text-slate-100 mt-1 block"></span>
+                </div>
+                <div class="sm:col-span-2 bg-slate-900/80 p-3.5 rounded-2xl border border-slate-800">
+                    <span class="text-slate-400 text-[11px] block font-medium">Email Address</span>
+                    <span id="viewEmpEmail" class="text-sm font-semibold text-emerald-300 mt-1 block"></span>
+                </div>
+            </div>
+
+            <!-- Custom Data Section -->
+            <div class="border-t border-slate-700/60 pt-4">
+                <h4 class="text-xs font-extrabold text-emerald-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info"></i> Additional Custom Data & Attributes
+                </h4>
+                <div id="viewEmpCustomData" class="space-y-2 text-xs">
+                    <!-- Dynamic Rows -->
+                </div>
+            </div>
+
+            <div class="flex justify-end pt-2">
+                <button onclick="closeProfileModal()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl transition">Close Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Employee Modal (UPDATED WITH HIGH-CONTRAST LIGHT THEME & DIRECT PHOTO UPLOAD) -->
+    <div id="empModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 flex items-center justify-center hidden p-4 custom-scrollbar overflow-y-auto">
+        <div class="bg-white w-full max-w-2xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-emerald-500/30 my-8 space-y-5 text-slate-800">
+            <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                <h3 id="empModalTitle" class="font-black text-xl text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-user-plus text-emerald-600"></i> Add New Employee
+                </h3>
+                <button onclick="closeEmpModal()" class="text-slate-400 hover:text-slate-700 p-1 transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
 
-            <form onsubmit="saveEmployee(event)" class="space-y-4 py-4 overflow-y-auto custom-scrollbar flex-1 pr-1">
-                <input type="hidden" id="empEditId">
-
-                <!-- Basic Fields -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <form onsubmit="handleEmpFormSubmit(event)" class="space-y-4">
+                <input type="hidden" id="empFormId">
+                <input type="hidden" id="empFormImageData">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Full Name *</label>
-                        <input type="text" id="field_name" required class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Full Name *</label>
+                        <input type="text" id="empFormName" required placeholder="Enter full name" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white transition shadow-2xs placeholder-slate-400">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Employee ID No *</label>
-                        <input type="text" id="field_idNo" required placeholder="e.g. CR-1088" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Employee ID No *</label>
+                        <input type="text" id="empFormIdNo" required placeholder="e.g. CR-2001" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white transition shadow-2xs placeholder-slate-400">
                     </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Sex / Gender *</label>
-                        <select id="field_sex" required class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Gender / Sex</label>
+                        <select id="empFormSex" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white transition shadow-2xs">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Blood Group *</label>
-                        <select id="field_bloodGroup" required class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Blood Group</label>
+                        <select id="empFormBlood" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white transition shadow-2xs">
                             <option value="None">None</option>
-                            <option value="A+">A+</option>
+			    <option value="A+">A+</option>
                             <option value="A-">A-</option>
                             <option value="B+">B+</option>
                             <option value="B-">B-</option>
@@ -316,108 +348,91 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Mobile No *</label>
-                        <input type="text" id="field_mobile" required placeholder="+1 (555) 019-2834" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Designation *</label>
-                        <input type="text" id="field_designation" required placeholder="e.g. Lead Engineer" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Department *</label>
+                        <input type="text" id="empFormDept" required placeholder="e.g. Software Engineering" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white transition shadow-2xs placeholder-slate-400">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Department *</label>
-                        <input type="text" id="field_department" required placeholder="e.g. Technology" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                    <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Email Address</label>
-                        <input type="email" id="field_email" placeholder="user@carbonrevolve.com" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs sm:text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Designation *</label>
+                        <input type="text" id="empFormDesignation" required placeholder="e.g. Senior Lead" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white transition shadow-2xs placeholder-slate-400">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-400 mb-1">Profile Picture (Upload)</label>
-                        <div class="flex items-center gap-3">
-                            <input type="hidden" id="field_picture">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Mobile Number</label>
+                        <input type="text" id="empFormMobile" placeholder="+880 1700-000000" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white transition shadow-2xs placeholder-slate-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1">Email Address</label>
+                        <input type="email" id="empFormEmail" placeholder="employee@carbonrevolve.com" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white transition shadow-2xs placeholder-slate-400">
+                    </div>
+                    
+                    <!-- Direct Photo Upload Section -->
+                    <div class="sm:col-span-2 bg-emerald-50/60 p-3.5 rounded-2xl border border-emerald-200/80 space-y-2">
+                        <label class="block text-xs font-bold text-emerald-900 flex items-center justify-between">
+                            <span><i class="fa-solid fa-camera text-emerald-600 mr-1"></i> Employee Photo Options</span>
+                            <span class="text-[10px] text-slate-500 font-normal">Upload photo directly OR insert URL</span>
+                        </label>
+                        
+                        <div class="flex flex-col sm:flex-row items-center gap-3">
+                            <div class="flex-shrink-0 relative">
+                                <img id="empImagePreview" src="https://placehold.co/100x100/e2e8f0/64748b?text=Photo" class="w-14 h-14 rounded-xl object-cover border-2 border-emerald-400 bg-white shadow-xs">
+                            </div>
                             
-                            <label class="cursor-pointer px-3 py-2 bg-slate-950 hover:bg-slate-800 border border-slate-800 rounded-xl text-xs font-medium text-slate-300 transition flex items-center gap-2">
-                                <i class="fa-solid fa-cloud-arrow-up text-emerald-400"></i>
-                                <span>Choose Image</span>
-                                <input type="file" id="field_picture_file" accept="image/*" onchange="handleImageUpload(event)" class="hidden">
-                            </label>
-
-                            <div id="imgPreviewWrapper" class="flex items-center gap-2 hidden">
-                                <img id="imgPreview" src="" alt="Preview" class="w-8 h-8 rounded-lg object-cover border border-emerald-500/50">
-                                <button type="button" onclick="clearImageUpload()" title="Remove Picture" class="p-1 text-slate-400 hover:text-red-400 text-xs">
-                                    <i class="fa-solid fa-circle-xmark"></i>
-                                </button>
+                            <div class="w-full space-y-2">
+                                <input type="file" id="empFileInput" accept="image/*" onchange="handleFileUpload(event)" class="block w-full text-xs text-slate-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-emerald-600 file:text-white hover:file:bg-emerald-700 cursor-pointer">
+                                
+                                <input type="url" id="empFormPicture" oninput="handleUrlInput(this.value)" placeholder="Or paste Image URL (https://...)" class="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-emerald-600 transition placeholder-slate-400">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Custom Info Section -->
-                <div class="border-t border-slate-800 pt-3">
+                <!-- Custom Key-Value Rows Header -->
+                <div class="border-t border-slate-200 pt-3">
                     <div class="flex items-center justify-between mb-2">
-                        <label class="text-xs font-semibold text-slate-300">Custom Attributes & Details</label>
-                        <button type="button" onclick="addCustomFieldRow()" class="text-xs text-emerald-400 hover:text-emerald-300 font-medium">
-                            + Add Custom Field
+                        <label class="text-xs font-bold text-emerald-800 uppercase tracking-wide">Custom Fields (Key / Value)</label>
+                        <button type="button" onclick="addCustomRow()" class="text-xs text-emerald-700 hover:text-emerald-900 font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-plus text-[10px]"></i> Add Field
                         </button>
                     </div>
                     <div id="customFieldsContainer" class="space-y-2">
-                        <!-- Key Value pairs -->
+                        <!-- Dynamic Input Pairs -->
                     </div>
                 </div>
 
-                <div class="pt-3 flex items-center justify-end gap-3 border-t border-slate-800">
-                    <button type="button" onclick="closeEmpModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs sm:text-sm font-medium transition">
-                        Cancel
-                    </button>
-                    <button type="submit" class="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition shadow-lg shadow-emerald-600/20">
-                        Save Record
-                    </button>
+                <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-200">
+                    <button type="button" onclick="closeEmpModal()" class="px-4 py-2.5 text-xs font-bold text-slate-600 hover:bg-slate-100 rounded-xl transition">Cancel</button>
+                    <button type="submit" class="px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-extrabold text-xs rounded-xl transition shadow-md">Save Record</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- MODAL: View Employee Detail -->
-    <div id="viewModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 custom-scrollbar overflow-y-auto">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-5 sm:p-6 shadow-2xl relative my-auto max-h-[90vh] overflow-y-auto custom-scrollbar">
-            <button onclick="closeViewModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            <div id="viewModalContent">
-                <!-- Populated dynamically -->
-            </div>
+    <!-- Footer -->
+    <footer class="border-t border-emerald-500/20 bg-slate-950/80 backdrop-blur-md py-4 mt-12">
+        <div class="max-w-[96%] xl:max-w-[1600px] mx-auto px-4 text-center text-xs text-slate-400 font-medium">
+            <p>&copy; 2026 Carbon Revolve Internal Database Portal. Protected with Super User Role Level Access.</p>
         </div>
-    </div>
+    </footer>
 
-    <!-- CUSTOM CONFIRMATION MODAL -->
-    <div id="confirmModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-sm w-full p-5 sm:p-6 text-center shadow-2xl">
-            <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                <i class="fa-solid fa-triangle-exclamation text-xl"></i>
-            </div>
-            <h4 class="text-base sm:text-lg font-bold text-white mb-1" id="confirmTitle">Confirm Action</h4>
-            <p class="text-xs text-slate-400 mb-6" id="confirmMessage">Are you sure you want to perform this action?</p>
-            <div class="flex gap-3">
-                <button id="confirmCancelBtn" class="flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs sm:text-sm font-medium transition">Cancel</button>
-                <button id="confirmOkBtn" class="flex-1 py-2 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition">Delete</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Application Script -->
     <script>
-        // State Management
-        const STORAGE_KEY = 'CR_EMPLOYEES_DATA_V2';
+        // Key State Constants & Storage
+        const STORAGE_KEY = 'CR_EMPLOYEES_DATA_V5';
+        const SUPER_PASSWORD = 'MirajCR';
         let isSuperUser = false;
         let employees = [];
 
-        // Initial Seed Data
+        // Dynamic Card Color Palette Pool for Bright Background
+        const cardThemes = [
+            { bg: 'bg-emerald-50/80 hover:bg-emerald-50', border: 'border-emerald-200 hover:border-emerald-400', badgeBg: 'bg-emerald-100 text-emerald-900 border border-emerald-300', accent: 'text-emerald-700', avatarBorder: 'border-emerald-400' },
+            { bg: 'bg-teal-50/80 hover:bg-teal-50', border: 'border-teal-200 hover:border-teal-400', badgeBg: 'bg-teal-100 text-teal-900 border border-teal-300', accent: 'text-teal-700', avatarBorder: 'border-teal-400' },
+            { bg: 'bg-sky-50/80 hover:bg-sky-50', border: 'border-sky-200 hover:border-sky-400', badgeBg: 'bg-sky-100 text-sky-900 border border-sky-300', accent: 'text-sky-700', avatarBorder: 'border-sky-400' },
+            { bg: 'bg-indigo-50/80 hover:bg-indigo-50', border: 'border-indigo-200 hover:border-indigo-400', badgeBg: 'bg-indigo-100 text-indigo-900 border border-indigo-300', accent: 'text-indigo-700', avatarBorder: 'border-indigo-400' }
+        ];
+
+        function getCardTheme(index) {
+            return cardThemes[index % cardThemes.length];
+        }
+
+        // Default Seed Data
         const seedEmployees = [
             {
                 id: '1',
@@ -425,7 +440,7 @@
                 idNo: 'CR-1001',
                 sex: 'Male',
                 bloodGroup: 'O+',
-                department: 'Executive',
+                department: 'Executive Management',
                 designation: 'Chief Technology Officer',
                 mobile: '+1 (555) 234-5678',
                 email: 'a.wright@carbonrevolve.com',
@@ -441,14 +456,13 @@
                 idNo: 'CR-1045',
                 sex: 'Male',
                 bloodGroup: 'A+',
-                department: 'Engineering',
+                department: 'Software Engineering',
                 designation: 'Senior Systems Architect',
                 mobile: '+1 (555) 432-8765',
                 email: 'm.vance@carbonrevolve.com',
                 picture: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
                 customData: [
-                    { key: 'Tech Stack', value: 'Rust, Go, Kubernetes' },
-                    { key: 'Shift', value: 'Day' }
+                    { key: 'Tech Stack', value: 'Rust, Go, Kubernetes' }
                 ]
             },
             {
@@ -457,20 +471,36 @@
                 idNo: 'CR-1092',
                 sex: 'Female',
                 bloodGroup: 'B-',
-                department: 'Design',
+                department: 'Product & Design',
                 designation: 'Lead Product Designer',
                 mobile: '+1 (555) 876-1234',
                 email: 'e.rostova@carbonrevolve.com',
                 picture: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=80',
                 customData: [
-                    { key: 'Work Mode', value: 'Hybrid (Mon/Thu HQ)' }
+                    { key: 'Work Mode', value: 'Hybrid (HQ/Remote)' }
+                ]
+            },
+            {
+                id: '4',
+                name: 'Sophia Chen',
+                idNo: 'CR-1105',
+                sex: 'Female',
+                bloodGroup: 'AB+',
+                department: 'Sustainability & R&D',
+                designation: 'Carbon Emission Analyst',
+                mobile: '+1 (555) 345-6789',
+                email: 's.chen@carbonrevolve.com',
+                picture: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80',
+                customData: [
+                    { key: 'Focus', value: 'CO2 Capture Systems' }
                 ]
             }
         ];
 
-        // Initialize App
+        // Initialization
         window.onload = function() {
             loadStoredData();
+            updateRoleUI();
             updateStatsAndFilters();
             renderEmployees();
         };
@@ -493,21 +523,125 @@
             localStorage.setItem(STORAGE_KEY, JSON.stringify(employees));
         }
 
+        // --- AUTHENTICATION SYSTEM (MirajCR Password Fix) ---
+        function openAuthModal() {
+            if (isSuperUser) {
+                // Logout Super User
+                isSuperUser = false;
+                updateRoleUI();
+                renderEmployees();
+                return;
+            }
+            document.getElementById('authPasswordInput').value = '';
+            document.getElementById('authErrorMsg').classList.add('hidden');
+            document.getElementById('authModal').classList.remove('hidden');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.add('hidden');
+        }
+
+        function handleAuthSubmit(event) {
+            event.preventDefault();
+            const passwordEntered = document.getElementById('authPasswordInput').value;
+            
+            if (passwordEntered === SUPER_PASSWORD) {
+                isSuperUser = true;
+                closeAuthModal();
+                updateRoleUI();
+                renderEmployees();
+            } else {
+                document.getElementById('authErrorMsg').classList.remove('hidden');
+            }
+        }
+
+        function updateRoleUI() {
+            const roleBadge = document.getElementById('roleBadge');
+            const roleDot = document.getElementById('roleDot');
+            const roleText = document.getElementById('roleText');
+            const authBtn = document.getElementById('authBtn');
+            const authIcon = document.getElementById('authIcon');
+            const authBtnText = document.getElementById('authBtnText');
+            const guestNotice = document.getElementById('guestNotice');
+            const addEmpBtn = document.getElementById('addEmpBtn');
+
+            if (isSuperUser) {
+                roleBadge.className = 'px-3.5 py-1.5 rounded-xl text-xs font-extrabold flex items-center gap-2 border bg-emerald-500/20 border-emerald-400 text-emerald-300 shadow-md';
+                roleDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse';
+                roleText.textContent = 'Super User (MirajCR)';
+                
+                authBtn.className = 'px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm rounded-xl bg-gradient-to-r from-rose-600 to-red-700 hover:from-rose-500 hover:to-red-600 text-white font-extrabold transition duration-200 shadow-lg shadow-rose-900/50 flex items-center gap-2 border border-rose-400/30';
+                authIcon.className = 'fa-solid fa-right-from-bracket text-xs';
+                authBtnText.textContent = 'Logout Super User';
+
+                guestNotice.classList.add('hidden');
+                addEmpBtn.classList.remove('hidden');
+                addEmpBtn.classList.add('flex');
+            } else {
+                roleBadge.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 border bg-slate-900/80 border-slate-700 text-slate-300 shadow-sm';
+                roleDot.className = 'w-2.5 h-2.5 rounded-full bg-slate-500';
+                roleText.textContent = 'Guest Account';
+
+                authBtn.className = 'px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm rounded-xl bg-gradient-to-r from-emerald-500 via-teal-600 to-emerald-700 hover:from-emerald-400 hover:to-teal-500 active:scale-95 text-white font-extrabold transition duration-200 shadow-lg shadow-emerald-900/50 flex items-center gap-2 border border-emerald-400/30';
+                authIcon.className = 'fa-solid fa-lock text-xs';
+                authBtnText.textContent = 'Super User Login';
+
+                guestNotice.classList.remove('hidden');
+                addEmpBtn.classList.add('hidden');
+                addEmpBtn.classList.remove('flex');
+            }
+        }
+
+        // --- STATS & FILTERS ---
         function updateStatsAndFilters() {
             document.getElementById('statTotalCount').textContent = employees.length;
-            const depts = [...new Set(employees.map(e => e.department))].filter(Boolean);
+            
+            const deptCounts = {};
+            employees.forEach(e => {
+                if (e.department) {
+                    deptCounts[e.department] = (deptCounts[e.department] || 0) + 1;
+                }
+            });
+
+            const depts = Object.keys(deptCounts);
             document.getElementById('statDeptCount').textContent = depts.length;
 
             const select = document.getElementById('deptFilter');
             const currentVal = select.value;
             select.innerHTML = '<option value="">All Departments</option>';
             depts.forEach(d => {
-                select.innerHTML += `<option value="${d}">${d}</option>`;
+                select.innerHTML += `<option value="${d}">${d} (${deptCounts[d]})</option>`;
             });
             select.value = currentVal;
+
+            // Render Quick Filter Badges
+            const badgeContainer = document.getElementById('departmentBadges');
+            badgeContainer.innerHTML = `
+                <button onclick="setDepartmentFilter('')" class="px-3 py-1 rounded-xl text-xs font-bold border whitespace-nowrap transition ${!currentVal ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'}">
+                    All (${employees.length})
+                </button>
+            `;
+            depts.forEach(d => {
+                const isActive = currentVal === d;
+                badgeContainer.innerHTML += `
+                    <button onclick="setDepartmentFilter('${d}')" class="px-3 py-1 rounded-xl text-xs font-bold border whitespace-nowrap transition ${isActive ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'}">
+                        ${d} (${deptCounts[d]})
+                    </button>
+                `;
+            });
         }
 
-        // Render Functions
+        function setDepartmentFilter(deptName) {
+            document.getElementById('deptFilter').value = deptName;
+            applyFilters();
+        }
+
+        function applyFilters() {
+            updateStatsAndFilters();
+            renderEmployees();
+        }
+
+        // --- RENDER EMPLOYEES GRID ---
         function renderEmployees() {
             const grid = document.getElementById('employeeGrid');
             const emptyState = document.getElementById('emptyState');
@@ -521,6 +655,7 @@
                                      (emp.idNo && emp.idNo.toLowerCase().includes(search)) || 
                                      (emp.designation && emp.designation.toLowerCase().includes(search)) ||
                                      (emp.mobile && emp.mobile.toLowerCase().includes(search)) ||
+                                     (emp.email && emp.email.toLowerCase().includes(search)) ||
                                      (emp.department && emp.department.toLowerCase().includes(search));
                 const matchesSex = !sex || emp.sex === sex;
                 const matchesBlood = !blood || emp.bloodGroup === blood;
@@ -536,68 +671,85 @@
                 emptyState.classList.add('hidden');
             }
 
-            filtered.forEach(emp => {
+            filtered.forEach((emp, index) => {
+                const theme = getCardTheme(index);
                 const card = document.createElement('div');
-                card.className = "bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-4 sm:p-5 flex flex-col justify-between transition duration-200 group hover:shadow-xl hover:shadow-slate-900/50";
+                card.className = `${theme.bg} ${theme.border} border rounded-3xl p-5 flex flex-col justify-between transition duration-300 hover:shadow-xl hover:scale-[1.01]`;
                 
-                const fallbackImg = `https://placehold.co/150x150/1e293b/64748b?text=${encodeURIComponent(emp.name ? emp.name.charAt(0) : 'E')}`;
+                const fallbackImg = `https://placehold.co/150x150/ffffff/059669?text=${encodeURIComponent(emp.name ? emp.name.charAt(0) : 'E')}`;
 
                 card.innerHTML = `
                     <div>
-                        <!-- Header / Image & Badge -->
-                        <div class="flex items-start justify-between gap-3 mb-3">
+                        <!-- Top Row: Avatar & Metadata -->
+                        <div class="flex items-start justify-between gap-3 mb-4">
                             <div class="relative flex-shrink-0">
                                 <img src="${emp.picture || fallbackImg}" 
                                      onerror="this.src='${fallbackImg}'" 
                                      alt="${emp.name}" 
-                                     class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover border-2 border-slate-800 group-hover:border-emerald-500/50 transition">
-                                <span class="absolute -bottom-1 -right-1 px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold rounded bg-red-500/20 text-red-400 border border-red-500/30">
+                                     class="w-16 h-16 rounded-2xl object-cover border-2 ${theme.avatarBorder} bg-white shadow-md">
+                                <span class="absolute -bottom-1 -right-1 px-1.5 py-0.5 text-[10px] font-black rounded bg-red-600 text-white shadow">
                                     ${emp.bloodGroup || 'N/A'}
                                 </span>
                             </div>
-                            <div class="flex flex-col items-end gap-1 flex-shrink-0">
-                                <span class="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-400 font-medium">
+                            
+                            <div class="flex flex-col items-end gap-1">
+                                <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-lg bg-white border border-slate-300 text-slate-800 font-extrabold shadow-2xs">
                                     ${emp.idNo}
                                 </span>
-                                <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300 font-medium">
+                                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-md ${theme.badgeBg}">
                                     ${emp.sex || 'N/A'}
                                 </span>
                             </div>
                         </div>
 
-                        <!-- Main Info -->
-                        <h3 class="font-bold text-sm sm:text-base text-white group-hover:text-emerald-400 transition leading-tight truncate" title="${emp.name}">${emp.name}</h3>
-                        <p class="text-xs font-medium text-slate-400 mt-0.5 truncate" title="${emp.designation}">${emp.designation}</p>
+                        <!-- Name BOLD & BIG SIZE -->
+                        <h3 class="font-black text-lg text-slate-900 tracking-tight leading-snug truncate" title="${emp.name}">
+                            ${emp.name}
+                        </h3>
+                        
+                        <!-- Designation -->
+                        <p class="text-xs font-bold ${theme.accent} mt-0.5 truncate" title="${emp.designation}">
+                            ${emp.designation}
+                        </p>
 
-                        <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-2 text-xs text-slate-300">
-                            <div class="flex items-center gap-2 truncate">
-                                <i class="fa-solid fa-building text-slate-500 w-4 text-center flex-shrink-0"></i>
-                                <span class="truncate">${emp.department}</span>
+                        <!-- Key Information Box -->
+                        <div class="mt-4 bg-white/90 p-3 rounded-2xl border border-slate-200/90 space-y-2 text-xs shadow-2xs">
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-1.5">
+                                <span class="text-slate-500 text-[11px] font-medium flex items-center gap-1.5">
+                                    <i class="fa-solid fa-building text-slate-400"></i> Department
+                                </span>
+                                <span class="font-bold text-slate-800 truncate max-w-[140px]" title="${emp.department}">${emp.department || 'N/A'}</span>
                             </div>
-                            <div class="flex items-center gap-2 truncate">
-                                <i class="fa-solid fa-phone text-slate-500 w-4 text-center flex-shrink-0"></i>
-                                <span class="truncate">${emp.mobile}</span>
+
+                            <div class="flex items-center justify-between border-b border-slate-100 pb-1.5">
+                                <span class="text-slate-500 text-[11px] font-medium flex items-center gap-1.5">
+                                    <i class="fa-solid fa-phone text-slate-400"></i> Mobile No
+                                </span>
+                                <span class="font-semibold text-slate-800">${emp.mobile || 'N/A'}</span>
                             </div>
-                            <div class="flex items-center gap-2 truncate">
-                                <i class="fa-solid fa-envelope text-slate-500 w-4 text-center flex-shrink-0"></i>
-                                <span class="truncate" title="${emp.email || ''}">${emp.email || 'N/A'}</span>
+
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-500 text-[11px] font-medium flex items-center gap-1.5">
+                                    <i class="fa-solid fa-envelope text-slate-400"></i> Mail ID
+                                </span>
+                                <span class="font-medium text-emerald-700 truncate max-w-[130px]" title="${emp.email}">${emp.email || 'N/A'}</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Actions -->
-                    <div class="mt-5 pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
-                        <button onclick="viewEmployee('${emp.id}')" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 transition">
-                            <span>View Profile</span>
+                    <!-- Card Footer Actions -->
+                    <div class="mt-4 pt-3 border-t border-slate-200/80 flex items-center justify-between">
+                        <button onclick="viewEmployee('${emp.id}')" class="text-xs font-extrabold ${theme.accent} hover:underline flex items-center gap-1.5">
+                            <span>Full Profile</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
 
                         ${isSuperUser ? `
-                            <div class="flex items-center gap-1">
-                                <button onclick="openEmpModal('${emp.id}')" title="Edit Employee" class="p-1.5 sm:p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="openEmpModal('${emp.id}')" title="Edit Employee" class="p-1.5 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 shadow-2xs transition">
                                     <i class="fa-solid fa-pen-to-square text-xs"></i>
                                 </button>
-                                <button onclick="deleteEmployee('${emp.id}')" title="Delete Employee" class="p-1.5 sm:p-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 transition">
+                                <button onclick="deleteEmployee('${emp.id}')" title="Delete Employee" class="p-1.5 rounded-lg bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 transition">
                                     <i class="fa-solid fa-trash-can text-xs"></i>
                                 </button>
                             </div>
@@ -608,342 +760,189 @@
             });
         }
 
-        function applyFilters() {
-            renderEmployees();
-        }
-
-        // Authentication Handlers
-        function openAuthModal() {
-            document.getElementById('loginError').classList.add('hidden');
-            document.getElementById('loginPassword').value = '';
-            document.getElementById('authModal').classList.remove('hidden');
-        }
-
-        function closeAuthModal() {
-            document.getElementById('authModal').classList.add('hidden');
-        }
-
-        function togglePasswordVisibility() {
-            const input = document.getElementById('loginPassword');
-            const icon = document.getElementById('passEyeIcon');
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.className = 'fa-solid fa-eye-slash text-xs';
-            } else {
-                input.type = 'password';
-                icon.className = 'fa-solid fa-eye text-xs';
-            }
-        }
-
-        function handleLogin(e) {
-            e.preventDefault();
-            const pass = document.getElementById('loginPassword').value;
-            if (pass === 'MirajCR') {
-                isSuperUser = true;
-                updateUIRole();
-                closeAuthModal();
-            } else {
-                document.getElementById('loginError').classList.remove('hidden');
-            }
-        }
-
-        function updateUIRole() {
-            const badge = document.getElementById('roleBadge');
-            const roleText = document.getElementById('roleText');
-            const authBtn = document.getElementById('authBtn');
-            const addBtn = document.getElementById('addEmpBtn');
-            const guestNotice = document.getElementById('guestNotice');
-
-            if (isSuperUser) {
-                badge.className = "hidden xs:flex px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold items-center gap-1.5 sm:gap-2 border bg-emerald-500/10 border-emerald-500/30 text-emerald-400";
-                badge.querySelector('span').className = "w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0";
-                roleText.textContent = "Super User";
-
-                authBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-medium transition flex items-center gap-1.5 sm:gap-2";
-                authBtn.innerHTML = `<i class="fa-solid fa-right-from-bracket text-[10px] sm:text-xs"></i> <span class="whitespace-nowrap">Switch to Guest</span>`;
-                authBtn.onclick = logoutSuperUser;
-
-                addBtn.classList.remove('hidden');
-                addBtn.classList.add('flex');
-                guestNotice.classList.add('hidden');
-            } else {
-                badge.className = "hidden xs:flex px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold items-center gap-1.5 sm:gap-2 border bg-slate-800 border-slate-700 text-slate-300";
-                badge.querySelector('span').className = "w-2 h-2 rounded-full bg-slate-400 flex-shrink-0";
-                roleText.textContent = "Guest Account";
-
-                authBtn.className = "px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-medium transition shadow-sm flex items-center gap-1.5 sm:gap-2";
-                authBtn.innerHTML = `<i class="fa-solid fa-lock text-[10px] sm:text-xs"></i> <span class="whitespace-nowrap">Super User Login</span>`;
-                authBtn.onclick = openAuthModal;
-
-                addBtn.classList.add('hidden');
-                addBtn.classList.remove('flex');
-                guestNotice.classList.remove('hidden');
-            }
-            renderEmployees();
-        }
-
-        function logoutSuperUser() {
-            isSuperUser = false;
-            updateUIRole();
-        }
-
-        // Employee View & CRUD Operations
+        // --- VIEW FULL PROFILE SYSTEM (VIEW PROFILE FIX) ---
         function viewEmployee(id) {
             const emp = employees.find(e => e.id === id);
             if (!emp) return;
 
-            const fallbackImg = `https://placehold.co/150x150/1e293b/64748b?text=${encodeURIComponent(emp.name ? emp.name.charAt(0) : 'E')}`;
-            const container = document.getElementById('viewModalContent');
+            const fallbackImg = `https://placehold.co/150x150/0f172a/10b981?text=${encodeURIComponent(emp.name ? emp.name.charAt(0) : 'E')}`;
+            
+            document.getElementById('viewEmpAvatar').src = emp.picture || fallbackImg;
+            document.getElementById('viewEmpName').textContent = emp.name || 'N/A';
+            document.getElementById('viewEmpDesignation').textContent = emp.designation || 'N/A';
+            document.getElementById('viewEmpId').textContent = emp.idNo || 'N/A';
+            document.getElementById('viewEmpDept').textContent = emp.department || 'N/A';
+            document.getElementById('viewEmpSex').textContent = emp.sex || 'N/A';
+            document.getElementById('viewEmpBlood').textContent = emp.bloodGroup || 'N/A';
+            document.getElementById('viewEmpMobile').textContent = emp.mobile || 'N/A';
+            document.getElementById('viewEmpEmail').textContent = emp.email || 'N/A';
 
-            let customHtml = '';
+            const customContainer = document.getElementById('viewEmpCustomData');
+            customContainer.innerHTML = '';
+
             if (emp.customData && emp.customData.length > 0) {
-                customHtml = `
-                    <div class="mt-4 pt-4 border-t border-slate-800">
-                        <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Additional Details</h4>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-                            ${emp.customData.map(c => `
-                                <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800">
-                                    <span class="text-slate-500 block text-[10px]">${c.key}</span>
-                                    <span class="text-slate-200 font-medium break-all">${c.value}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
+                emp.customData.forEach(row => {
+                    if (row.key || row.value) {
+                        customContainer.innerHTML += `
+                            <div class="flex items-center justify-between bg-slate-900/90 p-2.5 rounded-xl border border-slate-800">
+                                <span class="text-slate-400 font-semibold">${row.key || 'Custom Key'}:</span>
+                                <span class="font-bold text-slate-200">${row.value || 'N/A'}</span>
+                            </div>
+                        `;
+                    }
+                });
+            } else {
+                customContainer.innerHTML = `<p class="text-slate-500 italic text-xs">No additional custom attributes specified for this employee.</p>`;
             }
 
-            container.innerHTML = `
-                <div class="text-center pt-2">
-                    <img src="${emp.picture || fallbackImg}" 
-                         onerror="this.src='${fallbackImg}'" 
-                         alt="${emp.name}" 
-                         class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border-4 border-slate-800 mx-auto shadow-xl">
-                    
-                    <h3 class="text-lg sm:text-xl font-bold text-white mt-3">${emp.name}</h3>
-                    <p class="text-xs font-medium text-emerald-400">${emp.designation}</p>
-                    <div class="flex items-center justify-center gap-2 mt-2 flex-wrap">
-                        <span class="px-2.5 py-1 rounded-full bg-slate-950 border border-slate-800 text-slate-300 font-mono text-xs">
-                            ID: ${emp.idNo}
-                        </span>
-                        <span class="px-2.5 py-1 rounded-full bg-slate-950 border border-slate-800 text-slate-300 text-xs">
-                            Sex: ${emp.sex || 'N/A'}
-                        </span>
-                    </div>
-                </div>
-
-                <div class="mt-5 space-y-2.5 bg-slate-950/60 p-4 rounded-xl border border-slate-800 text-xs sm:text-sm">
-                    <div class="flex justify-between items-center border-b border-slate-800/60 pb-2">
-                        <span class="text-xs text-slate-400">Department</span>
-                        <span class="font-medium text-slate-200">${emp.department}</span>
-                    </div>
-                    <div class="flex justify-between items-center border-b border-slate-800/60 pb-2">
-                        <span class="text-xs text-slate-400">Blood Group</span>
-                        <span class="font-bold text-red-400 px-2 py-0.5 rounded bg-red-500/10 border border-red-500/20 text-xs">${emp.bloodGroup}</span>
-                    </div>
-                    <div class="flex justify-between items-center border-b border-slate-800/60 pb-2">
-                        <span class="text-xs text-slate-400">Mobile No</span>
-                        <span class="font-medium text-slate-200">${emp.mobile || 'N/A'}</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xs text-slate-400">Email Address</span>
-                        <span class="font-medium text-slate-200 truncate max-w-[200px]" title="${emp.email}">${emp.email || 'N/A'}</span>
-                    </div>
-                </div>
-
-                ${customHtml}
-            `;
-
-            document.getElementById('viewModal').classList.remove('hidden');
+            document.getElementById('profileModal').classList.remove('hidden');
         }
 
-        function closeViewModal() {
-            document.getElementById('viewModal').classList.add('hidden');
+        function closeProfileModal() {
+            document.getElementById('profileModal').classList.add('hidden');
         }
 
-        // Add & Edit Functions
+        // --- ADD & EDIT EMPLOYEE SYSTEM ---
         function openEmpModal(id = null) {
             if (!isSuperUser) return;
-            const title = document.getElementById('empModalTitle');
-            const editId = document.getElementById('empEditId');
+            const modal = document.getElementById('empModal');
             const container = document.getElementById('customFieldsContainer');
+            const preview = document.getElementById('empImagePreview');
             container.innerHTML = '';
+            document.getElementById('empFileInput').value = '';
+            document.getElementById('empFormImageData').value = '';
 
             if (id) {
                 const emp = employees.find(e => e.id === id);
                 if (!emp) return;
-
-                title.textContent = "Edit Employee Record";
-                editId.value = emp.id;
-
-                document.getElementById('field_name').value = emp.name || '';
-                document.getElementById('field_idNo').value = emp.idNo || '';
-                document.getElementById('field_sex').value = emp.sex || 'Male';
-                document.getElementById('field_bloodGroup').value = emp.bloodGroup || 'A+';
-                document.getElementById('field_mobile').value = emp.mobile || '';
-                document.getElementById('field_designation').value = emp.designation || '';
-                document.getElementById('field_department').value = emp.department || '';
-                document.getElementById('field_email').value = emp.email || '';
+                document.getElementById('empModalTitle').textContent = 'Edit Employee Profile';
+                document.getElementById('empFormId').value = emp.id;
+                document.getElementById('empFormName').value = emp.name || '';
+                document.getElementById('empFormIdNo').value = emp.idNo || '';
+                document.getElementById('empFormSex').value = emp.sex || 'Male';
+                document.getElementById('empFormBlood').value = emp.bloodGroup || 'A+';
+                document.getElementById('empFormDept').value = emp.department || '';
+                document.getElementById('empFormDesignation').value = emp.designation || '';
+                document.getElementById('empFormMobile').value = emp.mobile || '';
+                document.getElementById('empFormEmail').value = emp.email || '';
+                document.getElementById('empFormPicture').value = emp.picture || '';
+                document.getElementById('empFormImageData').value = emp.picture || '';
                 
-                setPictureValue(emp.picture || '');
+                preview.src = emp.picture || 'https://placehold.co/100x100/e2e8f0/64748b?text=Photo';
 
                 if (emp.customData && emp.customData.length > 0) {
-                    emp.customData.forEach(c => addCustomFieldRow(c.key, c.value));
+                    emp.customData.forEach(cd => addCustomRow(cd.key, cd.value));
+                } else {
+                    addCustomRow();
                 }
             } else {
-                title.textContent = "Add New Employee Record";
-                editId.value = '';
-
-                document.getElementById('field_name').value = '';
-                document.getElementById('field_idNo').value = '';
-                document.getElementById('field_sex').value = 'Male';
-                document.getElementById('field_bloodGroup').value = 'A+';
-                document.getElementById('field_mobile').value = '';
-                document.getElementById('field_designation').value = '';
-                document.getElementById('field_department').value = '';
-                document.getElementById('field_email').value = '';
-                
-                setPictureValue('');
+                document.getElementById('empModalTitle').textContent = 'Add New Employee';
+                document.getElementById('empFormId').value = '';
+                document.getElementById('empFormName').value = '';
+                document.getElementById('empFormIdNo').value = '';
+                document.getElementById('empFormSex').value = 'Male';
+                document.getElementById('empFormBlood').value = 'A+';
+                document.getElementById('empFormDept').value = '';
+                document.getElementById('empFormDesignation').value = '';
+                document.getElementById('empFormMobile').value = '';
+                document.getElementById('empFormEmail').value = '';
+                document.getElementById('empFormPicture').value = '';
+                preview.src = 'https://placehold.co/100x100/e2e8f0/64748b?text=Photo';
+                addCustomRow();
             }
 
-            document.getElementById('empModal').classList.remove('hidden');
-        }
-
-        // Image Handling Functions
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            if (file.size > 2 * 1024 * 1024) {
-                showConfirmModal('Image Too Large', 'Please select an image smaller than 2MB.', () => {});
-                event.target.value = '';
-                return;
-            }
-
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const base64Data = e.target.result;
-                setPictureValue(base64Data);
-            };
-            reader.readAsDataURL(file);
-        }
-
-        function setPictureValue(dataUrl) {
-            document.getElementById('field_picture').value = dataUrl;
-            const wrapper = document.getElementById('imgPreviewWrapper');
-            const preview = document.getElementById('imgPreview');
-            
-            if (dataUrl) {
-                preview.src = dataUrl;
-                wrapper.classList.remove('hidden');
-            } else {
-                preview.src = '';
-                wrapper.classList.add('hidden');
-                document.getElementById('field_picture_file').value = '';
-            }
-        }
-
-        function clearImageUpload() {
-            setPictureValue('');
+            modal.classList.remove('hidden');
         }
 
         function closeEmpModal() {
             document.getElementById('empModal').classList.add('hidden');
         }
 
-        function addCustomFieldRow(key = '', value = '') {
+        // Direct File Upload Handler
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const result = e.target.result;
+                    document.getElementById('empFormImageData').value = result;
+                    document.getElementById('empImagePreview').src = result;
+                    document.getElementById('empFormPicture').value = '';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function handleUrlInput(val) {
+            if (val.trim()) {
+                document.getElementById('empFormImageData').value = val.trim();
+                document.getElementById('empImagePreview').src = val.trim();
+            }
+        }
+
+        function addCustomRow(key = '', value = '') {
             const container = document.getElementById('customFieldsContainer');
             const row = document.createElement('div');
-            row.className = "flex items-center gap-2 custom-field-row";
+            row.className = 'flex items-center gap-2 custom-row';
             row.innerHTML = `
-                <input type="text" placeholder="Attribute (e.g. Shift)" value="${key}" class="custom-key w-1/2 px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-slate-200">
-                <input type="text" placeholder="Value (e.g. Night)" value="${value}" class="custom-value w-1/2 px-2.5 py-1.5 bg-slate-950 border border-slate-800 rounded-lg text-xs text-slate-200">
-                <button type="button" onclick="this.parentElement.remove()" class="p-1 text-slate-500 hover:text-red-400 transition">
-                    <i class="fa-solid fa-trash-can text-xs"></i>
-                </button>
+                <input type="text" placeholder="Field Title (e.g. Desk No)" value="${key}" class="w-1/2 px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white custom-key">
+                <input type="text" placeholder="Value Details" value="${value}" class="w-1/2 px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 font-semibold focus:outline-none focus:border-emerald-600 focus:bg-white custom-val">
+                <button type="button" onclick="this.parentElement.remove()" class="p-1.5 text-rose-600 hover:text-rose-800 transition"><i class="fa-solid fa-trash-can text-xs"></i></button>
             `;
             container.appendChild(row);
         }
 
-        function saveEmployee(e) {
-            e.preventDefault();
+        function handleEmpFormSubmit(event) {
+            event.preventDefault();
             if (!isSuperUser) return;
 
-            const editId = document.getElementById('empEditId').value;
-            const customRows = document.querySelectorAll('.custom-field-row');
+            const id = document.getElementById('empFormId').value;
+            const customRows = document.querySelectorAll('.custom-row');
             const customData = [];
 
-            customRows.forEach(row => {
-                const k = row.querySelector('.custom-key').value.trim();
-                const v = row.querySelector('.custom-value').value.trim();
-                if (k && v) {
+            customRows.forEach(r => {
+                const k = r.querySelector('.custom-key').value.trim();
+                const v = r.querySelector('.custom-val').value.trim();
+                if (k || v) {
                     customData.push({ key: k, value: v });
                 }
             });
 
-            const empObj = {
-                id: editId || Date.now().toString(),
-                name: document.getElementById('field_name').value.trim(),
-                idNo: document.getElementById('field_idNo').value.trim(),
-                sex: document.getElementById('field_sex').value,
-                bloodGroup: document.getElementById('field_bloodGroup').value,
-                mobile: document.getElementById('field_mobile').value.trim(),
-                designation: document.getElementById('field_designation').value.trim(),
-                department: document.getElementById('field_department').value.trim(),
-                email: document.getElementById('field_email').value.trim(),
-                picture: document.getElementById('field_picture').value.trim(),
+            const photoData = document.getElementById('empFormImageData').value || document.getElementById('empFormPicture').value.trim();
+
+            const empPayload = {
+                id: id || Date.now().toString(),
+                name: document.getElementById('empFormName').value.trim(),
+                idNo: document.getElementById('empFormIdNo').value.trim(),
+                sex: document.getElementById('empFormSex').value,
+                bloodGroup: document.getElementById('empFormBlood').value,
+                department: document.getElementById('empFormDept').value.trim(),
+                designation: document.getElementById('empFormDesignation').value.trim(),
+                mobile: document.getElementById('empFormMobile').value.trim(),
+                email: document.getElementById('empFormEmail').value.trim(),
+                picture: photoData,
                 customData: customData
             };
 
-            if (editId) {
-                const idx = employees.findIndex(emp => emp.id === editId);
-                if (idx !== -1) employees[idx] = empObj;
+            if (id) {
+                const index = employees.findIndex(e => e.id === id);
+                if (index !== -1) employees[index] = empPayload;
             } else {
-                employees.unshift(empObj);
+                employees.unshift(empPayload);
             }
 
             saveToLocalStorage();
+            closeEmpModal();
             updateStatsAndFilters();
             renderEmployees();
-            closeEmpModal();
         }
 
         function deleteEmployee(id) {
             if (!isSuperUser) return;
-            const emp = employees.find(e => e.id === id);
-            if (!emp) return;
-
-            showConfirmModal('Delete Employee', `Are you sure you want to delete ${emp.name} (${emp.idNo})?`, () => {
-                employees = employees.filter(e => e.id !== id);
-                saveToLocalStorage();
-                updateStatsAndFilters();
-                renderEmployees();
-            });
-        }
-
-        // Custom Confirmation Modal Helper
-        function showConfirmModal(title, message, onConfirm) {
-            document.getElementById('confirmTitle').textContent = title;
-            document.getElementById('confirmMessage').textContent = message;
-
-            const modal = document.getElementById('confirmModal');
-            const okBtn = document.getElementById('confirmOkBtn');
-            const cancelBtn = document.getElementById('confirmCancelBtn');
-
-            modal.classList.remove('hidden');
-
-            const handleOk = () => {
-                onConfirm();
-                cleanup();
-            };
-
-            const cleanup = () => {
-                modal.classList.add('hidden');
-                okBtn.removeEventListener('click', handleOk);
-                cancelBtn.removeEventListener('click', cleanup);
-            };
-
-            okBtn.addEventListener('click', handleOk);
-            cancelBtn.addEventListener('click', cleanup);
+            employees = employees.filter(e => e.id !== id);
+            saveToLocalStorage();
+            updateStatsAndFilters();
+            renderEmployees();
         }
     </script>
 </body>
